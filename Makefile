@@ -1,4 +1,4 @@
-APP_LIST=hvac mediaplayer dashboard
+APP_LIST=hvac mediaplayer googlemap aquarium dashboard
 
 package:
 	mkdir -p package
