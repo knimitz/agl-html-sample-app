@@ -1,0 +1,51 @@
+body {
+	margin-top: 3%;
+}
+
+.background-image{
+	width:100%;
+	background:url(./images/AGL_HMI_Blue_Background_Car-01.png);
+	background-repeat: no-repeat;
+	background-size:cover;
+}
+#SpeedDisplay {
+	height:15%;
+}
+
+#speed {
+	margin:3%;
+	height:15%;
+	float: left;
+	font-size:20vw;
+}
+
+#unit {
+	margin:3%;
+	font-size:10vw;
+	text-align: bottom;
+}
+
+#CarImgBox {
+	clear: both;
+	text-align: center;
+}
+#CarImg {
+	width:40vw;
+}
+
+.TirePresser{
+	width:20vw;
+}
+
+#TireFrontLeft{
+	width:15%;
+}
+#TireRearLeft{
+	width:20%;
+}
+#TireFrontRight{
+	width:25vw;
+}
+#TireRearRight{
+	width:25vw;
+}
