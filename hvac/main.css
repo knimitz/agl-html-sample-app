@@ -1,0 +1,113 @@
+body {
+	margin-top: 3%;
+}
+
+.background-image{
+	width:100%;
+	background:url(./app/images/AGL_HMI_Blue_Background_Car-01.png);
+	background-repeat: no-repeat;
+	background-size:cover;
+}
+
+/* class */
+.Fan {
+	margin-top:10%;
+	margin-left:7%;
+	margin-bottom:10%;
+	height:20%;
+}
+
+#Fan-img {
+	margin:3%;
+	float: left;
+	width:15vw;
+}
+
+.input-range{
+	margin-top:9vw;
+	margin-bottom:9vw;
+	width:60vw;
+	-webkit-appearance: none;
+	appearance: none;
+	background-color:#00ADDC; /*on: 00ADDC */
+	height: 1vw;
+	border-radius: 30px;
+}
+
+.CenterController {
+	margin:3%;
+	margin-bottom: 5%;
+	text-align:center;
+	height:60%;
+}
+#CenterControllArea {
+	height:60%;
+	margin-top:3%;
+	margin-left:7%;
+	margin-right:7%;
+	clear: both;
+}
+#leftheat {
+	float: left;
+	width:25%
+}
+#rightheat {
+	float: left;
+	width:25%
+}
+#CenterButton {
+	float: left;
+	width:30%
+}
+
+.ACButton{
+	background-color:rgba(0,0,0,0);
+	width:25vw;
+	height:15vw;
+	color:#848286;
+	font-size:10vw;
+}
+
+#AutoBox{
+	margin-top:3%;
+	font-size:10vw;
+}
+
+.AirButton {
+	width:13vw;
+	height:15vw;
+	margin-top: 5%;
+	margin-left: 1%;
+	margin-bottom: 5%;
+}
+#AirButtonArea{
+	margin-top:2rem;
+	text-align:center;
+	clear: both;
+}
+.HeatDegree-ul {
+	margin: 0;
+	padding: 0;
+	width: 100%;
+	height: 20vw;
+	overflow-y: scroll;
+	border: 1px solid #ccc
+}
+.HeatDegree-ul::-webkit-scrollbar {
+  display: none;
+}
+.HeatDegree-li {
+	list-style: none!important;
+	padding: 4px;
+	font-size:10vw;
+	color:white;
+}
+
+/* test -- */
+#toggle {
+	position: relative;
+}
+#toggle:target .front{
+	opacity: 0;
+	pointer-events : none;
+}

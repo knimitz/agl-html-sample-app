@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8" />
+<title>videoplayer</title>
+ <link rel="stylesheet" href="./sample.css" />
+</head>
+<body>
+<p>
+<video id="video" controls loop width=1050>
+  <source src="test.mp4" type="video/mp4" />
+</video>
+</p>
+ <script src="./cpu.js"></script>
+<div id="time">
+ <span id="currentTime">0</span> / <span id="totalTime">0</span>
+ <br> <span id="progressTime">0</span>%
+</div>
+<div id="control">
+<p>
+    <button id="play">▶play</button>
+    <button id="pause">= pause</button>
+    <button id="stop">■stop</button>
+    <button id="Looping">∞Loop</button><br>
+    <br><br>
+    <button id="next">Next</button>
+</p>
+</div>
+
+<div id="load">
+  <span id="cpuload">0%</span>
+</div>
+ <script src="./video.js"></script>
+
+</body>
+</html>
