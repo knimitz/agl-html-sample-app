@@ -23,16 +23,30 @@ body {
 	width:15vw;
 }
 
-.input-range{
+.input-range {
 	margin-top:9vw;
 	margin-bottom:9vw;
 	width:60vw;
 	-webkit-appearance: none;
 	appearance: none;
 	background-color:#00ADDC; /*on: 00ADDC */
-	height: 1vw;
+	height: 1.5vw;
 	border-radius: 30px;
 }
+
+.input-range::-webkit-slider-thumb {
+       -webkit-appearance: none;
+	    appearance: none;
+	    cursor: pointer;
+	    position: relative;
+	    border: none;
+	    width: 2rem;
+	    height: 2rem;
+	    display: block;
+	    background-color: #FFFFFF;
+	    border-radius: 50%;
+	    -webkit-border-radius: 50%;
+	}
 
 .CenterController {
 	margin:3%;
@@ -103,11 +117,3 @@ body {
 	color:white;
 }
 
-/* test -- */
-#toggle {
-	position: relative;
-}
-#toggle:target .front{
-	opacity: 0;
-	pointer-events : none;
-}

@@ -10,8 +10,7 @@
 		<div id="root"></div>
 
 		<div class="Fan">
-			<!--<div class="Fan" id="Fan-img"><img src="./app/images/HMI_HVAC_Fan_Icon.svg"></div> -->
-			<div class="Fan-img"><img id="Fan-img" src="./app/images/HMI_HVAC_Fan_Icon.svg">
+			<div class="Fan-img"><img id="Fan-img" onclick="toggleFanImg()" src="./app/images/HMI_HVAC_Fan_Inactive.svg">
 				<input class="input-range" type="range" name="num" min="0" max="255" step="1" value="0" onchange="changeValue(this.value)" >
 			</div>
 		</div>
@@ -20,7 +19,7 @@
 			<div class="CenterController" id="leftheat">
 				<!-- seatheat, heatdegre, ac, auto, car-->
 				<div id="toggle">
-				<img class="SeatHeat" id="LeftChairImg" onclick="toggleButton()" src="./app/images/HMI_HVAC_Left_Chair_OFF.svg">
+				<img class="SeatHeat" id="LeftChairImg" onclick="toggleButton('Left')" src="./app/images/HMI_HVAC_Left_Chair_OFF.svg">
 				</div>
 				<ul class="HeatDegree-ul">
 					<li class="HeatDegree-li">LO</li>
@@ -51,11 +50,11 @@
 					<span id="AutoBox">Auto</span>
 					</button>
 				</div>
-				<img id="AirController" src="app/images/HMI_HVAC_Circulation_Inactive.svg">
+				<img id="AirController" onclick="toggleCirculate()" src="app/images/HMI_HVAC_Circulation_Inactive.svg">
 			</div>
 			<div class="CenterController" id="rightheat">
 				<!-- seatheat, heatdegre, ac, auto, car-->
-				<img class="SeatHeat" src="./app/images/HMI_HVAC_Right_Chair_OFF.svg">
+				<img class="SeatHeat" id="RightChairImg" src="./app/images/HMI_HVAC_Right_Chair_OFF.svg" onclick="toggleButton('Right')">
 				<ul class="HeatDegree-ul">
 					<li class="HeatDegree-li">LO</li>
 					<li class="HeatDegree-li">16</li>
@@ -78,11 +77,11 @@
 
 
 		<div id="AirButtonArea">
-			<img class="AirButton" id="AirDown" src="./app/images/HMI_HVAC_AirDown_Inactive.svg">
-			<img class="AirButton" id="AirUp" src="./app/images/HMI_HVAC_AirUp_Inactive.svg">
-			<img class="AirButton" id="AirRight" src="./app/images/HMI_HVAC_AirRight_Inactive.svg">
-			<img class="AirButton" id="Rear" src="./app/images/HMI_HVAC_Rear_Inactive.svg">
-			<img class="AirButton" id="Front" src="./app/images/HMI_HVAC_Front_Inactive.svg">
+			<img class="AirButton" id="AirDown" onclick="toggleAirDown()" src="./app/images/HMI_HVAC_AirDown_Inactive.svg">
+			<img class="AirButton" id="AirUp" onclick="toggleAirUp()" src="./app/images/HMI_HVAC_AirUp_Inactive.svg">
+			<img class="AirButton" id="AirRight" onclick="toggleAirRight()" src="./app/images/HMI_HVAC_AirRight_Inactive.svg">
+			<img class="AirButton" id="Rear" onclick="toggleRear()" src="./app/images/HMI_HVAC_Rear_Inactive.svg">
+			<img class="AirButton" id="Front" onclick="toggleFront()" src="./app/images/HMI_HVAC_Front_Inactive.svg">
 		</div>
 		</div>
 	<script src="./main.js">
