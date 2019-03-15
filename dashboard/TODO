@@ -1,0 +1,3 @@
+TODO
+ * Remove hardcode of ip adress and port and token.
+ * Check application can launch by run-by-default without any modification
