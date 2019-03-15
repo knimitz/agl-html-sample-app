@@ -1,18 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<widget xmlns="http://www.w3.org/ns/widgets" id="dashboard" version="0.1">
-  <name>Dashboard</name>
+<widget xmlns="http://www.w3.org/ns/widgets" id="dashboard_web" version="0.1">
+  <name>Dashboard_web</name>
   <icon src="icon.svg"/>
   <content src="index.html" type="text/html"/>
-  <description>This is a demo dashboard application</description>
+  <description>This is a demo html dashboard application</description>
   <author>Renesas</author>
   <license>APL 2.0</license>
   <feature name="urn:AGL:widget:required-api">
-    <param name="windowmanager" value="ws"/>
-    <param name="homescreen" value="ws"/>
     <param name="low-can" value="ws"/>
   </feature>
   <feature name="urn:AGL:widget:required-permission">
     <param name="urn:AGL:permission::public:no-htdocs" value="required" />
+    <param name="urn:AGL:permission::public:hidden" value="required" />
+    <param name="urn:AGL:permission::system:run-by-default" value="required" />
   </feature>
 </widget>
 

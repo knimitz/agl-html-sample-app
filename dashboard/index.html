@@ -5,46 +5,134 @@
 		<meta http-equiv="x-ua-compatible" content="ie=edge">
 		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=2,user-scalable=no">
 		<title>AGL Dashboard</title>
-		<link href="main.css" rel="stylesheet"/>
+		<link href="dashboard.css" rel="stylesheet"/>
 	</head>
 	<body class="background-image">
-
-		<div id="SpeedDisplay">
-			<div id="speed">0</div>
-			<div id="unit">km/h</div>
-		</div>
-
-		<table>
-			<tr>
-				<td>
-			<div class="TirePresser" id="TireFrontLeft">
-				<img src="images/HMI_Dashboard_LeftTire.svg" align="left">
+		<div id="all">
+			<script type="text/javascript" src="./afb.js"></script>
+			<script type="text/javascript" src="./main.js"></script>
+			<script type="text/javascript" src="./progressbar.js"></script>
+			<!-- Speed Display Area start -->
+			<div id="SpeedDisplay" class="SpeedDisplayArea">
+				<div id="speed" text="speed">0</div>
+				<div id=UnitBox>
+					<div id="unit">MPH</div>
+					<div id="total_distance">100,000.5 miles</div>
+				</div>
 			</div>
+			<!-- App Area start -->
+			<table class=AppArea>
+				<tr valign=center>
+					<td class=Cell id="LeftBox">
+						<div class="DoorWindowDisplay" id="DoorLeftFront">
+							<div id="DoorLeftText" class=ldata text="21" >
+								LEFT FRONT
+								<div class="DoorWindowStatusBlank"></div>
+								<div class="DoorWindowStatus">
+									<div class="DoorWindowLabel">DOOR</div>
+									<div id="doors.front_left.open" class="DoorWindowCurrentStatus">CLOSE</div>
+									<img id="DoorsFrontLeftImg" class="WarningIcon" style="visibility:hidden" src="./images/HMI_Dashboard_Warning.svg">
+								</div>
+								<div class="DoorWindowStatus">
+									<div class="DoorWindowLabel">WINDOW</div>
+									<div id="windows.front_left.open" class="DoorWindowCurrentStatus">CLOSE</div>
+									<img id="WindowFrontLeftImg" class="WarningIcon" style="visibility:hidden" src="./images/HMI_Dashboard_Warning.svg">
+								</div>
+							</div>
+						</div>
+						<div class="DoorWindowDisplay" id="DoorLeftRear">
+							<div id="DoorLeftText" class=ldata text="22" >
+								LEFT REAR
+								<div class="DoorWindowStatusBlank"></div>
+								<div class="DoorWindowStatus">
+									<div class="DoorWindowLabel">DOOR</div>
+									<div id="doors.rear_left.open" class="DoorWindowCurrentStatus">CLOSE</div>
+									<img id="DoorsRearLeftImg" class="WarningIcon" style="visibility:hidden" src="./images/HMI_Dashboard_Warning.svg">
+								</div>
+								<div class="DoorWindowStatus">
+									<div class="DoorWindowLabel">WINDOW</div>
+									<div id="windows.rear_left.open" class="DoorWindowCurrentStatus">CLOSE</div>
+									<img id="WindowRearLeftImg" class="WarningIcon" style="visibility:hidden" src="./images/HMI_Dashboard_Warning.svg">
+								</div>
+							</div>
+						</div>
 					</td>
-				<td>1</td>
-				<td>1</td>
-			</tr>
-			<tr>
-				<td>2</td>
-				<td>2</td>
-			</tr>
-		</table>
-		<div id="LeftBox">
-			<div class="TirePresser" id="TireRearLeft">
-				<img src="images/HMI_Dashboard_LeftTire.svg" align="left">
+					<td id="CarImgBox">
+						<img id="CarImg" src="images/HMI_Dashboard_Car.png">
+					</td class=Cell>
+					<td class=Cell id="RightBox">
+						<div class="DoorWindowDisplay" id="DoorRightFront">
+							<div id="DoorRightText" class=rdata text="24" >
+								RIGHT FRONT
+								<div class="DoorWindowStatusBlank"></div>
+								<div class="DoorWindowStatus">
+									<div class="DoorWindowLabel">DOOR</div>
+									<div id="doors.front_right.open" class="DoorWindowCurrentStatus">CLOSE</div>
+									<img id="DoorsFrontRightImg" class="WarningIcon" style="visibility:hidden" src="./images/HMI_Dashboard_Warning.svg">
+								</div>
+								<div class="DoorWindowStatus">
+									<div class="DoorWindowLabel">WINDOW</div>
+									<div id="windows.front_right.open" class="DoorWindowCurrentStatus">CLOSE</div>
+									<img id="WindowFrontRightImg" class="WarningIcon" style="visibility:hidden" src="./images/HMI_Dashboard_Warning.svg">
+								</div>
+							</div>
+						</div>
+						<div class="DoorWindowDisplay" id="DoorRightRear">
+							<div id="DoorRightText" class=rdata text="25" >
+								RIGHT REAR
+								<div class="DoorWindowStatusBlank"></div>
+								<div class="DoorWindowStatus">
+									<div class="DoorWindowLabel">DOOR</div>
+									<div id="doors.rear_right.open" class="DoorWindowCurrentStatus">CLOSE</div>
+									<img id="DoorsRearRightImg" class="WarningIcon" style="visibility:hidden" src="./images/HMI_Dashboard_Warning.svg">
+								</div>
+								<div class="DoorWindowStatus">
+									<div class="DoorWindowLabel">WINDOW</div>
+									<div id="windows.rear_right.open" class="DoorWindowCurrentStatus">CLOSE</div>
+									<img id="WindowRearRightImg" class="WarningIcon" style="visibility:hidden" src="./images/HMI_Dashboard_Warning.svg">
+								</div>
+							</div>
+						</div>
+					</td>
+				</tr>
+			</table>
+			<div class="BootDisplayArea" id="DoorBoot">
+				<div id="DoorRightText" class=rdata text="26" >
+					BOOT
+					<div class="DoorWindowStatusBlank"></div>
+					<div class="DoorWindowStatusBlank"></div>
+					<div class="DoorWindowStatus">
+						<div class="DoorWindowLabel">DOOR</div>
+						<div id="doors.boot.open" class="DoorWindowCurrentStatus">CLOSE</div>
+						<img id="DoorsBootImg" class="WarningIcon" style="visibility:hidden" src="./images/HMI_Dashboard_Warning.svg">
+					</div>
+				</div>
 			</div>
-		</div>
-		<div id="RightBox">
-			<div class="TirePresser" id="TireFrontRight">
-				<img src="images/HMI_Dashboard_RightTire.svg" align="right">
+			<div id="IndicatorAreaAll" class="IndicatorAll">
+				<div id="FirstIndicatorArea" class="IndicatorArea">
+					<div id="EngineOilTemperature" class="IndicatorBox">
+						<img class="Indicator" id="EngineOilTemperatureImg" src="./images/HMI_Dashboard_Temperature_Icon.svg">
+						<div class="IndicatorProgressBar" id="EngineOilTemperatureBar"></div>
+						<div class="IndicatorText" text="TextEngineOilTemperature">ENGINE OIL TEMPRATURE</div>
+					</div>
+				</div>
+				<div id="SecondIndicatorArea" class="IndicatorArea">
+					<div id="RPM" class="IndicatorBox">
+						<img class="Indicator" id="RPMImg" src="./images/HMI_Dashboard_Speed_Icon.svg">
+						<div class="IndicatorProgressBar" id="RPMBar"></div>
+						<div class="IndicatorText" text="TextRPM">(RPM)</div>
+					</div>
+					<div id="Fuel" class="IndicatorBox">
+						<img class="Indicator" id="FuelImg" src="./images/HMI_Dashboard_Fuel_Icon.svg">
+						<div class="IndicatorProgressBar" id="FuelBar"></div>
+						<div class="IndicatorText" text="TextFuel">FUEL</div>
+					</div>
+				</div>
 			</div>
-			<div class="TirePresser" id="TireRearRight">
-				<img src="images/HMI_Dashboard_RightTire.svg" align="right">
 			</div>
-		</div>
-		<div id="CarImgBox">
-			<img id="CarImg" src="images/HMI_Dashboard_Car.png">
-		</div>
-
+		</div> <!-- end all -->
 	</body>
 </html>
+
+
+
