@@ -1,6 +1,6 @@
 var serverHost = '192.168.0.1';	/* for WiFi */
-var lowCanPort = '1029';	/* low-can-service port */
-var token = 'HELLO'; /* default token in AGL */
+var dashBoardPort = '1060';	/* dashboard port */
+var token = 'HELLO'; /* default token in AGL but this is not used in this file*/
 
 var VAL_ENG_OIL_TEMP_MAX = 100  // Maximum engine oil temperature (100 * 1.00000f)
 var VAL_RPM_MAX = 6975.75       // Maximum RPM (27903 * 0.250000f)
@@ -166,8 +166,8 @@ function onUnsubscribed() {
 
 function init() {
 	var base = new Object();
-	base.host = serverHost + ":" + lowCanPort;
-	base.token = token;
+	base.host = serverHost + ":" + dashBoardPort;
+	//base.token = token;
 	afb = new AFB(base);
         ws = new afb.ws(onOpen, onAbort);
 
