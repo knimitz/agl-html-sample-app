@@ -1,6 +1,4 @@
-var serverHost = '192.168.0.1';	/* for WiFi */
-var dashBoardPort = '1060';	/* dashboard port */
-var token = 'HELLO'; /* default token in AGL but this is not used in this file*/
+var token = new URLSearchParams(window.location.search).get('token');
 
 var VAL_ENG_OIL_TEMP_MAX = 100  // Maximum engine oil temperature (100 * 1.00000f)
 var VAL_RPM_MAX = 6975.75       // Maximum RPM (27903 * 0.250000f)
@@ -168,8 +166,8 @@ function init() {
 	var base = new Object();
 	base.host = serverHost + ":" + dashBoardPort;
 	//base.token = token;
-	afb = new AFB(base);
-        ws = new afb.ws(onOpen, onAbort);
+	afb = new AFB({token:m_token||'HELLO'});
+	ws = new afb.ws(onOpen, onAbort);
 
 	// Set progress bar
 	//// Engine oil temperature

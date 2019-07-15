@@ -1,3 +1,2 @@
 TODO
- * Remove hardcode of ip adress and port.
  * web-runtime is necessary. But it is not installed by default agl-demo-platform 
