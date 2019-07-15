@@ -1,7 +1,7 @@
 var token = new URLSearchParams(window.location.search).get('token');
 
 var VAL_ENG_OIL_TEMP_MAX = 100  // Maximum engine oil temperature (100 * 1.00000f)
-var VAL_RPM_MAX = 6975.75       // Maximum RPM (27903 * 0.250000f)
+var VAL_RPM_MAX = 6975.75	   // Maximum RPM (27903 * 0.250000f)
 var VAL_FUEL_MAX = 100.000035   // Maximum fuel (255* 0.392157f)
 
 var STR_OPEN = 'OPEN'
@@ -14,46 +14,46 @@ var bar_rpm;
 var bar_fuel;
 
 function retWindowDoorState(state) {
-    var str;
+	var str;
 	if (state) {
 		str = STR_OPEN;
-    }
-    else {
-        str = STR_CLOSE;
-    }
-    return str
+	}
+	else {
+		str = STR_CLOSE;
+	}
+	return str
 }
 
 function switchWindowDoorWarningIcon(id, state) {
-    var visibility;
+	var visibility;
 	if (state) {
 		visibility = "visible";
 
-    }
-    else {
+	}
+	else {
 		visibility = "hidden";
-    }
+	}
 	document.getElementById(id).style.visibility = visibility;
 }
 
 function switchWindowDoorStatus(state_id, img_id, state) {
-    var str;
-    var visibility;
-    var color;
+	var str;
+	var visibility;
+	var color;
 
 	if (state) {
 		str = STR_OPEN;
 		visibility = "visible";
-        color = "red";
-    }
-    else {
+		color = "red";
+	}
+	else {
 		str = STR_CLOSE;
 		visibility = "hidden";
-        color = "cyan";
-    }
-    document.getElementById(state_id).innerHTML = str;
-    document.getElementById(state_id).style.color = color;
-    document.getElementById(img_id).style.visibility = visibility;
+		color = "cyan";
+	}
+	document.getElementById(state_id).innerHTML = str;
+	document.getElementById(state_id).style.color = color;
+	document.getElementById(img_id).style.visibility = visibility;
 }
 
 function eventProc(obj) {
@@ -97,32 +97,32 @@ function eventProc(obj) {
 			break;
 		/* 0x620 */
 		case "messages.doors.boot.open":
-            switchWindowDoorStatus("doors.boot.open", "DoorsBootImg", obj.data.value);
+			switchWindowDoorStatus("doors.boot.open", "DoorsBootImg", obj.data.value);
 			break;
 		case "messages.doors.front_left.open":
-            switchWindowDoorStatus("doors.front_left.open", "DoorsFrontLeftImg", obj.data.value);
+			switchWindowDoorStatus("doors.front_left.open", "DoorsFrontLeftImg", obj.data.value);
 			break;
 		case "messages.doors.front_right.open":
-            switchWindowDoorStatus("doors.front_right.open", "DoorsFrontRightImg", obj.data.value);
+			switchWindowDoorStatus("doors.front_right.open", "DoorsFrontRightImg", obj.data.value);
 			break;
 		case "messages.doors.rear_left.open":
-            switchWindowDoorStatus("doors.rear_left.open", "DoorsRearLeftImg", obj.data.value);
+			switchWindowDoorStatus("doors.rear_left.open", "DoorsRearLeftImg", obj.data.value);
 			break;
 		case "messages.doors.rear_right.open":
-            switchWindowDoorStatus("doors.rear_right.open", "DoorsRearRightImg", obj.data.value);
+			switchWindowDoorStatus("doors.rear_right.open", "DoorsRearRightImg", obj.data.value);
 			break;
 		/* 0x799 */
 		case "messages.windows.front_left.open":
-            switchWindowDoorStatus("windows.front_left.open", "WindowFrontLeftImg", obj.data.value);
+			switchWindowDoorStatus("windows.front_left.open", "WindowFrontLeftImg", obj.data.value);
 			break;
 		case "messages.windows.front_right.open":
-            switchWindowDoorStatus("windows.front_right.open", "WindowFrontRightImg", obj.data.value);
+			switchWindowDoorStatus("windows.front_right.open", "WindowFrontRightImg", obj.data.value);
 			break;
 		case "messages.windows.rear_left.open":
-            switchWindowDoorStatus("windows.rear_left.open", "WindowRearLeftImg", obj.data.value);
+			switchWindowDoorStatus("windows.rear_left.open", "WindowRearLeftImg", obj.data.value);
 			break;
 		case "messages.windows.rear_right.open":
-            switchWindowDoorStatus("windows.rear_right.open", "WindowRearRightImg", obj.data.value);
+			switchWindowDoorStatus("windows.rear_right.open", "WindowRearRightImg", obj.data.value);
 			break;
 	}
 }
@@ -172,24 +172,24 @@ function init() {
 	// Set progress bar
 	//// Engine oil temperature
 	bar_eng_oil_temp = new ProgressBar.Line(document.getElementById('EngineOilTemperatureBar'), {
-	    color: "lime",
-	    trailColor: "#aaa",
+		color: "lime",
+		trailColor: "#aaa",
 		duration: 100,
 		svgStyle: {width: '100%', height: '30%'}
 	});
 
 	//// RPM
 	bar_rpm = new ProgressBar.Line(document.getElementById('RPMBar'), {
-	    color: "lime",
-	    trailColor: "#aaa",
+		color: "lime",
+		trailColor: "#aaa",
 		duration: 100,
 		svgStyle: {width: '100%', height: '30%'}
 	});
 
 	//// Fuel
 	bar_fuel = new ProgressBar.Line(document.getElementById('FuelBar'), {
-	    color: "lime",
-	    trailColor: "#aaa",
+		color: "lime",
+		trailColor: "#aaa",
 		duration: 100,
 		svgStyle: {width: '100%', height: '30%'}
 	});
