@@ -1,4 +1,4 @@
-var token = new URLSearchParams(window.location.search).get('token');
+var m_token = new URLSearchParams(window.location.search).get('token');
 
 var VAL_ENG_OIL_TEMP_MAX = 100  // Maximum engine oil temperature (100 * 1.00000f)
 var VAL_RPM_MAX = 6975.75	   // Maximum RPM (27903 * 0.250000f)
@@ -165,7 +165,6 @@ function onUnsubscribed() {
 function init() {
 	var base = new Object();
 	base.host = serverHost + ":" + dashBoardPort;
-	//base.token = token;
 	afb = new AFB({token:m_token||'HELLO'});
 	ws = new afb.ws(onOpen, onAbort);
 
